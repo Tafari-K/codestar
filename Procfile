@@ -1,1 +1,1 @@
-web: gunicorn codestar_djproject.wsgi
+web: gunicorn codestar.wsgi
