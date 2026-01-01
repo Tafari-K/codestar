@@ -8,7 +8,17 @@ from .forms import CollaborateForm
 
 def about_me(request):
     """
-    Render the about me page.
+    Render the about me page. the most recent information on the website Author and allows user callaborattion requests.
+
+    Displays and individual instance of :model:`about.About`.
+
+    **Context**
+    ``about``
+        The most recent instance of :model:`about.About`.
+        ``collaborate_form``
+        An instance of :form:`about.CollaborateForm` for user collaboration requests.
+    **Template:**
+    :template:`about/about.html`
     """
     about = About.objects.all().order_by('-updated_on').first()
     collaborate_form = CollaborateForm()
